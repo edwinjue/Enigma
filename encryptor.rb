@@ -5,13 +5,17 @@ class Encryptor
 	
 	include Helper
 
+	attr_reader :key, :date
+
 	def initialize(message,key,date)
 		@message = message
+		@key = validate_key(key)
+		@date = validate_date(date)
 		
-		@rotation_array = process_rotation(key)
+		@rotation_array = process_rotation(@key)
 		#puts "rotation_array = " + @rotation_array.inspect
 		
-		@offset_array = process_offset(date)
+		@offset_array = process_offset(@date)
 		#puts "offset = " + @offset_array.inspect
 		@char_set = Constants::CHARSET.split(//)
 		

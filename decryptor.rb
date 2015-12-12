@@ -1,16 +1,23 @@
+require_relative 'constants'
 require_relative 'helper'
+
 class Decryptor
 	
 	include Helper
 
-	def initialize(message, key, date)
+	attr_reader :key, :date
+
+	def initialize(message,key,date)
 		@message = message
-		
-		@rotation_array = process_rotation(key)
+		@key = validate_key(key)
+		@date = validate_date(date)
+
+		@rotation_array = process_rotation(@key)
 		#puts "rotation_array = " + @rotation_array.inspect
 		
-		@offset_array = process_offset(date)
+		@offset_array = process_offset(@date)
 		#puts "offset = " + @offset_array.inspect
+		
 		@char_set = Constants::CHARSET.split(//)
 
 		#to determine the number of digits we are working with for each character
@@ -48,5 +55,6 @@ class Decryptor
 		end
 
 		decryptext
+
 	end
 end
