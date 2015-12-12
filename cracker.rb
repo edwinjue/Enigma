@@ -1,0 +1,3 @@
+class Cracker
+
+end
