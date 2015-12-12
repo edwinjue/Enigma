@@ -1,12 +1,5 @@
 # Enigma
-<br>
-> From the terminal clone the respoitory:<br>
->   &nbsp;git clone https://github.com/edwinjue/Enigma.git<br>
-> Change to Enigma directory:
->   &nbsp;cd Enigma<br>
-> Execute pry:
->   &nbsp;pry<br>
-  <br>
+
 Run the following in `pry`:<br>
 > require './enigma'<br>
 > e = Enigma.new<br>
