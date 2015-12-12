@@ -30,6 +30,7 @@ class Decryptor
 		#process entire message by breaking up the message by @num_digits segments (see @num_digits comment in initialize)
 		@message.scan(/.{1,#{@num_digits}}/m).each_with_index do |segment, index|
 			
+			#current position is the segment evaluated into an integer
 			current_position = segment.to_i
 
 			#get current offset
