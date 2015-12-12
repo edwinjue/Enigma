@@ -42,14 +42,25 @@ class Enigma
 		decryptor.run
 	end
 
-	def crack(encryptext)
-		cracker = Cracker.new
+	def crack(encryptext, date=nil)
+		
+		valid_message = validate_message(encryptext)
+
+		valid_date = validate_date(date)
+		#puts "valid_date = " + valid_date.inspect
+
+		cracker = Cracker.new(valid_message, valid_date)
+		cracker.run
 	end
 end
 =begin
 e = Enigma.new
-my_message = "this is so secret ..end.."
+my_message = "this is no secret ..end.."
 output = e.encrypt(my_message)
+puts output
+e.crack(output)
+=end
+=begin
 puts output
 output = e.encrypt(my_message, 12345, '092480')
 output = e.encrypt(my_message, 12345, Date.new(2014, 10, 5) )

@@ -5,10 +5,10 @@ class Decryptor
 
 	def initialize(message, key, date)
 		@message = message
-		#@key = key
+		
 		@rotation_array = process_rotation(key)
 		#puts "rotation_array = " + @rotation_array.inspect
-		#@date = date
+		
 		@offset_array = process_offset(date)
 		#puts "offset = " + @offset_array.inspect
 		@char_set = Constants::CHARSET.split(//)
