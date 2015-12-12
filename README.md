@@ -1,8 +1,10 @@
 # Enigma
 <br>
-> From the terminal clone the respoitory, change to Enigma directory and execute pry:<br>
+> From the terminal clone the respoitory:<br>
 >   git clone https://github.com/edwinjue/Enigma.git<br>
+> Change to Enigma directory:
 >   cd Enigma<br>
+> Execute pry:
 >   pry<br>
   <br>
 Run the following in `pry`:<br>
