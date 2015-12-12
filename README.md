@@ -12,8 +12,6 @@ Run the following in `pry`:<br>
 => "this is so secret ..end.."<br>
 > e.decrypt(output, 12345) # Date is optional (use today's date)<br>
 => "this is so secret ..end.."<br>
-<br>
-#crack functionality not working yet<br>
 > e.crack(output, Date.today)<br>
 => "this is so secret ..end.."<br>
 > e.crack(output) # Date is optional, use today's date<br>
