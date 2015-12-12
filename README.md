@@ -1,6 +1,6 @@
 # Enigma
 
-`pry`<br>
+Run the following in `pry`:<br>
 > require './enigma'<br>
 > e = Enigma.new<br>
 > my_message = "this is so secret ..end.."<br>
