@@ -167,7 +167,7 @@ class Cracker
 
 #		puts key
 		decryptor = Decryptor.new(@message,key,@date)
-		puts decryptor.run
+		decryptor.run
 
 
 	end

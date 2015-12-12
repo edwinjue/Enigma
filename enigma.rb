@@ -8,10 +8,6 @@ class Enigma
 
 	include Helper
 	
-	def initialize
-		@keygen = Keygen.new
-	end
-	
 	def encrypt(plaintext, key=nil, date=nil)
 		#puts "calling encrypt"
 
