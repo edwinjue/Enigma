@@ -49,7 +49,8 @@ class Encryptor
 			#perform arithmetic
 			segment = (current_position.to_i + current_rotation.to_i + current_offset.to_i) % @char_set.length
 
-			encryptext << "%0#{@num_digits}d" % segment.to_s
+			#encryptext << "%0#{@num_digits}d" % segment.to_s
+			encryptext << segment.to_s.rjust(@num_digits,'0')
 		end
 		#puts originalpos
 		encryptext

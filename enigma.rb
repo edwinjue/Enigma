@@ -49,13 +49,14 @@ class Enigma
 		cracker.run
 	end
 end
-=begin
+
 e = Enigma.new
 my_message = "this is no secret ..end.."
 output = e.encrypt(my_message)
 puts output
-e.crack(output)
-=end
+plaintext = e.crack(output)
+puts plaintext
+
 =begin
 puts output
 output = e.encrypt(my_message, 12345, '092480')

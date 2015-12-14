@@ -151,7 +151,7 @@ class Cracker
 				end
 			end
 		end
-=begin		
+=begin
 		puts a_rot.inspect
 		puts b_rot.inspect
 		puts c_rot.inspect
@@ -162,6 +162,10 @@ class Cracker
 		puts "c_rot_val.inspect = " + c_rot_val.inspect
 		puts "d_rot_val.inspect = " + d_rot_val.inspect
 =end
+
+		if a_rot_val[0].nil? || a_rot_val[1].nil? || b_rot_val[1].nil? || c_rot_val[1].nil? || d_rot_val[1].nil?
+			raise ArgumentError, "encrypted message: '#{@message}' seems to be missing ..end.."
+		end
 
 		key = a_rot_val[0] + a_rot_val[1] + b_rot_val[1] + c_rot_val[1] + d_rot_val[1]
 
