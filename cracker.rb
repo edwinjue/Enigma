@@ -5,10 +5,10 @@ class Cracker
 
 	include Helper
 
-	def initialize(message,date)
-		@message = message
-		@date = date
-		@offset_array = process_offset(date)
+	def initialize(params)
+		@message = params[:message]
+		@date = params[:date]
+		@offset_array = process_offset(@date)
 		#puts "offset = " + @offset_array.inspect
 		@char_set = Constants::CHARSET.split(//)
 
@@ -170,7 +170,9 @@ class Cracker
 		key = a_rot_val[0] + a_rot_val[1] + b_rot_val[1] + c_rot_val[1] + d_rot_val[1]
 
 #		puts key
-		decryptor = Decryptor.new(@message,key,@date)
+		decryptor = Decryptor.new message: @message,
+															key: key,
+															date: @date
 		decryptor.run
 
 

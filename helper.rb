@@ -52,7 +52,7 @@ module Helper
 		if key.nil?
 			Keygen.new.create_new_key
 		else
-			"%05d" % key
+			"%05d" % key.to_i
 		end
 	end
 

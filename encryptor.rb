@@ -7,10 +7,11 @@ class Encryptor
 
 	attr_reader :key, :date
 
-	def initialize(message,key,date)
-		@message = message
-		@key = validate_key(key)
-		@date = validate_date(date)
+	def initialize(params)
+		#p params
+		@message = params[:message]
+		@key = validate_key(params[:key])
+		@date = validate_date(params[:date])
 		
 		@rotation_array = process_rotation(@key)
 		#puts "rotation_array = " + @rotation_array.inspect

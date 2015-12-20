@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require_relative 'encryptor'
 require_relative 'keygen'
 
@@ -10,15 +11,17 @@ end
 def read_file(file_name)
   file = File.open(file_name, "r")
   data = file.read.strip	#strip to remove EOF character
-  puts "inside read_file: data = #{data}"
+  #puts "inside read_file: data = #{data}"
   file.close
   return data
 end
 
 def encrypt_file(file_name,data)
-	puts "inside encrypte_file: data = #{data}"
+	#puts "inside encrypt_file: data = #{data}"
 	key = Keygen.new.create_new_key
-	encryptor = Encryptor.new(data,key,Time.now)
+	encryptor = Encryptor.new message: data,
+														key: key,
+														date: Time.now
 	encryptext = encryptor.run
 	File.write(file_name, encryptext)
 	puts "Created #{file_name} with the key #{encryptor.key} and date #{encryptor.date}"

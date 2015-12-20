@@ -19,7 +19,9 @@ class Enigma
 		valid_date = validate_date(date)
 		#puts "valid_date = " + valid_date.inspect
 
-		encryptor = Encryptor.new(valid_message, valid_key, valid_date)		
+		encryptor = Encryptor.new message: valid_message, 
+															key: valid_key, 
+															date: valid_date
 		encryptor.run
 	end
 
@@ -34,7 +36,9 @@ class Enigma
 		valid_date = validate_date(date)
 		#puts "valid_date = " + valid_date.inspect
 
-		decryptor = Decryptor.new(valid_message, valid_key, valid_date)
+		decryptor = Decryptor.new message: valid_message, 
+															key: valid_key, 
+															date: valid_date
 		decryptor.run
 	end
 
@@ -45,7 +49,8 @@ class Enigma
 		valid_date = validate_date(date)
 		#puts "valid_date = " + valid_date.inspect
 
-		cracker = Cracker.new(valid_message, valid_date)
+		cracker = Cracker.new message: valid_message, 
+													date: valid_date		
 		cracker.run
 	end
 end
